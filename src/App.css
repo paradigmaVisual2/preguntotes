@@ -3,3 +3,25 @@
   justify-content: center;
   max-width: 800px;
 }
+
+.main-container{
+  border-radius: 15px;
+  border-style: solid;
+  color: white;
+  background-color: rgb(112, 161, 194);
+  align-self: center;
+}
+
+
+#root {
+  color: black;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-self: center;
+}
+
+.questions{
+  border-color: black;
+  border-style: solid;
+}

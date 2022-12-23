@@ -8,6 +8,7 @@ export const AllQuestions = ({ update }) => {
   useEffect(() => {
     const fetchQuestions = async () => {
       const { data, error } = await supabase.from("question").select("*");
+      console.log(data);
       if (error) {
         setError(true);
         setOkay(false);
@@ -32,16 +33,24 @@ export const AllQuestions = ({ update }) => {
               style={{
                 borderRadius: 8,
                 border: "solid",
-                borderWidth: 1,
+                borderWidth: 3,
                 padding: 10,
                 marginBottom: 10,
-                borderColor: "#bdbdbd",
+                borderColor: "white",
               }}
             >
               <h5>{q.text}</h5>
-              <h6>Difficulty: {q.difficulty}</h6>
+              <h6>
+                Difficulty:{" "}
+                {q.difficulty === 0
+                  ? "Easy"
+                  : q.difficulty === 1
+                  ? "Medium"
+                  : "Hard"}
+              </h6>
               <h6>Points: {q.points}</h6>
               <h6>Answer: {q.answer ? "True" : "False"}</h6>
+              <h6>Category: {q.category}</h6>
             </div>
           ))}
         </div>

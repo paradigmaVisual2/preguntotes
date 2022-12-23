@@ -12,16 +12,16 @@ export const supabase = createClient(supabaseUrl, supabaseKey);
 function App() {
   const [update, setUpdate] = useState(0);
   return (
-    <Container>
+    <div className="main-container p-5">
       <Row>
-        <Col>
+        <Col className="m-2">
           <NewQuestion update={setUpdate} />
         </Col>
-        <Col>
+        <Col className="m-2">
           <AllQuestions update={update} />
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 
